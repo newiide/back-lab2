@@ -186,6 +186,7 @@ OrdersRouter.patch('/orders/:orderId', authorizationMiddleware, (req, res) => {
 
   if (order.status === 'Done') {
     return res.status(400).send({ message: `Order status can't be changed` });
+
   }
 
   if (user && user.role === 'Customer') {
